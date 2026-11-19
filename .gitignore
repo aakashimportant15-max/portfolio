@@ -13,3 +13,6 @@ PORTFOLIO_MASTER_PROMPT.txt
 reference/
 scr/
 .env*
+_originals/
+npm-install.log
+serve.log
