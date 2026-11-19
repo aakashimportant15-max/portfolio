@@ -84,7 +84,7 @@ async function setTheme(page, theme) {
 
 (async () => {
   fs.mkdirSync(OUT_DIR, { recursive: true });
-  const server = await startServer();
+  const server = process.env.SKIP_SERVER ? null : await startServer();
   const browser = await chromium.launch();
 
   // Desktop 1440x900, light + dark
@@ -148,6 +148,6 @@ async function setTheme(page, theme) {
   await desktop.close();
 
   await browser.close();
-  server.close();
+  if (server) server.close();
   console.log("Screenshots saved to", OUT_DIR);
 })();

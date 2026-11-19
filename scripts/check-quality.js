@@ -20,12 +20,14 @@ function startServer() {
       res.writeHead(200, { "Content-Type": MIME[path.extname(file)] || "application/octet-stream" });
       res.end(fs.readFileSync(file));
     });
-    server.listen(4173, () => resolve(server));
+    server.listen(Number(process.env.PORT) || 4173, () => resolve(server));
   });
 }
 
+const PORT = Number(process.env.PORT) || 4173;
+
 (async () => {
-  const server = await startServer();
+  const server = process.env.SKIP_SERVER ? null : await startServer();
   const browser = await chromium.launch();
   const results = [];
   for (const width of [390, 768, 1024, 1440]) {
@@ -36,7 +38,7 @@ function startServer() {
       if (m.type() === "error" || m.type() === "warning") errors.push(`${m.type()}: ${m.text()}`);
     });
     page.on("pageerror", (e) => errors.push("pageerror: " + e.message));
-    await page.goto("http://localhost:4173", { waitUntil: "networkidle" });
+    await page.goto(`http://localhost:${PORT}`, { waitUntil: "networkidle" });
     await page.waitForTimeout(800);
     const scrollW = await page.evaluate(() => document.documentElement.scrollWidth);
     results.push({ width, scrollW, overflow: scrollW > width, errors });
@@ -44,5 +46,5 @@ function startServer() {
   }
   console.log(JSON.stringify(results, null, 2));
   await browser.close();
-  server.close();
+  if (server) server.close();
 })();

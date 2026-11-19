@@ -56,6 +56,14 @@ coming soon" mockup placeholder is shown automatically (checked at build time).
 | `images/projects/*.png` | Project screenshots | "Screenshot coming soon" mockup card |
 | `certificates/codeverse-2026.pdf` | Certificate link target | - |
 | `certificates/codeverse-2026.png` | Certificate card image | Text-only achievement card |
+| `experience/*.pdf` | "View certificate" proof links on the Experience timeline | Link hidden |
+| `certificates/*.pdf` / `*.jpg` | Course/achievement certificate links | Link hidden |
+
+New resume versions (Business Analyst, SAP ABAP) appear as disabled "coming soon"
+entries until `public/resumes/Aakash_Resume_Business_Analyst.pdf` /
+`Aakash_Resume_SAP_ABAP.pdf` are added.
 
 `reference/` contains other people's design screenshots - layout reference only,
-never shipped in the build.
+never shipped in the build. `_originals/` holds untouched copies of every uploaded
+certificate/letter (git-ignored). Two recommendation letters (StudifySuccess LOR,
+eDC IIT Delhi letter) are intentionally NOT published - see ASSET_MAP.md and CHANGES.md.
