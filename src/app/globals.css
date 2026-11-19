@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+/* Class-based dark mode (html.dark) */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ---------------------------------------------------------------
+   Design tokens. Change the accent colour HERE (one place).
+   --------------------------------------------------------------- */
+:root {
+  --bg: #f6f7f9;
+  --bg-card: #ffffff;
+  --bg-muted: #eef0f4;
+  --text: #16181d;
+  --text-muted: #565c66;
+  --border: #e2e5ea;
+  --accent: #a86710; /* amber, AA on light bg */
+  --accent-strong: #8f570e;
+  --teal: #0b7265;
+  --shadow: 0 1px 2px rgb(16 20 28 / 0.05), 0 8px 24px rgb(16 20 28 / 0.06);
+}
+
+.dark {
+  --bg: #0b0f1a;
+  --bg-card: #111827;
+  --bg-muted: #17203a;
+  --text: #e8ebf1;
+  --text-muted: #9aa3b2;
+  --border: #232c42;
+  --accent: #f0a43a; /* amber */
+  --accent-strong: #f5b960;
+  --teal: #3cc5b3;
+  --shadow: 0 1px 2px rgb(0 0 0 / 0.4), 0 8px 24px rgb(0 0 0 / 0.35);
+}
+
+/* Map tokens into Tailwind's theme so utilities like bg-card work */
+@theme inline {
+  --color-bg: var(--bg);
+  --color-card: var(--bg-card);
+  --color-muted-bg: var(--bg-muted);
+  --color-ink: var(--text);
+  --color-ink-muted: var(--text-muted);
+  --color-line: var(--border);
+  --color-accent: var(--accent);
+  --color-accent-strong: var(--accent-strong);
+  --color-teal: var(--teal);
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-space-grotesk), var(--font-inter), sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Anchor offset for the sticky navbar */
+section[id],
+div[id="top"] {
+  scroll-margin-top: 84px;
+}
+
+::selection {
+  background: var(--accent);
+  color: #fff;
+}
+
+/* Visible keyboard focus everywhere */
+:focus-visible {
+  outline: 2px solid var(--teal);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Subtle grid texture used in the hero only */
+.hero-grid {
+  background-image:
+    linear-gradient(var(--border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: 44px 44px;
+  opacity: 0.35;
+  mask-image: radial-gradient(ellipse 80% 70% at 50% 0%, black 30%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 0%, black 30%, transparent 75%);
+}
+
+/* Count-up numbers: tabular so widths don't jump */
+.tabular {
+  font-variant-numeric: tabular-nums;
+}

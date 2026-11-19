@@ -1,0 +1,15 @@
+node_modules/
+.next/
+out/
+*.tsbuildinfo
+next-env.d.ts
+_photo.png
+_contact_sheet.png
+.playwright-browsers/
+lighthouse-report.json
+FULL_DIRECTORY_TREE.txt
+PROMPT.txt
+PORTFOLIO_MASTER_PROMPT.txt
+reference/
+scr/
+.env*
