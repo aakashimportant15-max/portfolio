@@ -11,6 +11,8 @@ export type Achievement = {
   /** Certificate image card (only the first one has this). */
   certificateImage?: string;
   certificatePdf?: string;
+  /** Optional proof link (PDF or image). */
+  proof?: { label: string; href: string; external?: boolean };
 };
 
 export const achievements: Achievement[] = [
@@ -26,6 +28,10 @@ export const achievements: Achievement[] = [
     title: "Best Paper Presentation (top 6)",
     detail:
       "13th International Conference on Responsible Management in the Age of AI, IILM University (Mar 2026). Co-authored paper: \"Balancing Efficiency and Human Values in Organizational Automation\" (accepted for publication, 2026).",
+    proof: {
+      label: "View certificate",
+      href: "/certificates/iilm-best-paper-2026.webp",
+    },
   },
   {
     id: "design-registration",
@@ -37,11 +43,19 @@ export const achievements: Achievement[] = [
     id: "studify-award",
     title: "Certificate of Achievement for Outstanding Performance in Data Analysis",
     detail: "StudifySuccess (Aug 2026).",
+    proof: {
+      label: "View certificate",
+      href: "/experience/studifysuccess-best-intern-certificate-2026.pdf",
+    },
   },
   {
     id: "top-ca",
     title: "Top Campus Ambassador recognition",
     detail: "eDC, IIT Delhi.",
+    proof: {
+      label: "View certificate",
+      href: "/experience/edc-campus-ambassador-certificate-2026.pdf",
+    },
   },
 ];
 
@@ -50,28 +64,39 @@ export type CourseCertificate = {
   issuer: string;
   year: string;
   inProgress?: boolean;
+  /** Optional proof (PDF or image) served from /public. */
+  href?: string;
+  hrefLabel?: string;
 };
 
 export const courseCertificates: CourseCertificate[] = [
   {
-    name: "Introduction to Machine Learning",
+    name: "Introduction to Machine Learning (Elite)",
     issuer: "NPTEL, IIT Madras",
     year: "2026",
+    href: "/certificates/nptel-ml-elite-2026.pdf",
+    hrefLabel: "View certificate",
   },
   {
     name: "Summer Internship Training in AI and ML",
     issuer: "IICT",
     year: "2026",
+    href: "/certificates/iict-summer-internship-training-2026.pdf",
+    hrefLabel: "View certificate",
   },
   {
     name: "Data Analytics Job Simulation",
     issuer: "Deloitte, Forage",
     year: "2025",
+    href: "/certificates/deloitte-data-analytics-simulation-2025.pdf",
+    hrefLabel: "View certificate",
   },
   {
-    name: "Advanced Excel Skills for Business",
-    issuer: "Coursera",
+    name: "Advanced Excel Skills for Business (Advanced)",
+    issuer: "Coursera (Macquarie University)",
     year: "2025",
+    href: "/certificates/coursera-excel-advanced-2025.pdf",
+    hrefLabel: "View certificate",
   },
   {
     name: "Web Dev Cohort 2026",
@@ -83,6 +108,27 @@ export const courseCertificates: CourseCertificate[] = [
     issuer: "ChaiCode",
     year: "2026",
     inProgress: true,
+  },
+  {
+    name: "Agentic AI Hackathon '26 - participation",
+    issuer: "Product Space",
+    year: "2026",
+    href: "/certificates/agentic-ai-hackathon-2026.jpg",
+    hrefLabel: "View certificate",
+  },
+  {
+    name: "HACKDAY 1.0 - participation",
+    issuer: "DECODEP (with Unstop and GO.)",
+    year: "2026",
+    href: "/certificates/hackday-1.0-participation-2026.pdf",
+    hrefLabel: "View certificate",
+  },
+  {
+    name: "Ethical Hacking and Network Pentesting Internship with Industrial Training",
+    issuer: "CRAW Security (with VIPS-TC)",
+    year: "2025",
+    href: "/certificates/craw-security-internship-2025.jpg",
+    hrefLabel: "View certificate",
   },
 ];
 

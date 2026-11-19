@@ -1,4 +1,4 @@
-import { Briefcase } from "lucide-react";
+import { Briefcase, FileText } from "lucide-react";
 import { experience } from "@/data/experience";
 
 export default function Experience() {
@@ -36,6 +36,17 @@ export default function Experience() {
                   <Briefcase size={13} className="text-accent" aria-hidden />
                   {item.recognition}
                 </p>
+              )}
+              {item.proof && (
+                <a
+                  href={item.proof.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-3 inline-flex items-center gap-1.5 rounded-full border border-line bg-card px-3 py-1.5 text-xs font-semibold text-teal transition-colors hover:border-teal"
+                >
+                  <FileText size={13} aria-hidden />
+                  {item.proof.label}
+                </a>
               )}
             </li>
           ))}

@@ -47,6 +47,18 @@ export const resumes: ResumeOption[] = [
     hint: "Classifiers, 82K emails",
     file: "Aakash_Resume_ML_NLP.pdf",
   },
+  {
+    id: "business-analyst",
+    label: "Business Analyst",
+    hint: "Analysis and reporting focus",
+    file: "Aakash_Resume_Business_Analyst.pdf",
+  },
+  {
+    id: "sap-abap",
+    label: "SAP ABAP",
+    hint: "ERP development focus",
+    file: "Aakash_Resume_SAP_ABAP.pdf",
+  },
 ];
 
 /** /resumes/<file>?v=<RESUME_VERSION> */

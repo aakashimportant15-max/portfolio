@@ -43,10 +43,9 @@ export const showcaseProjects: ShowcaseProject[] = [
       {
         label: "Live demo",
         href: "https://sparelook.onrender.com",
-        note: "May take up to a minute to wake up.",
       },
     ],
-    screenshots: ["/images/projects/sparelook-1.png", "/images/projects/sparelook-2.png"],
+    screenshots: ["/images/projects/sparelook-1.webp", "/images/projects/sparelook-2.png"],
     device: "laptop",
     caseStudy: true,
   },
@@ -65,7 +64,6 @@ export const showcaseProjects: ShowcaseProject[] = [
       {
         label: "Live demo",
         href: "https://aakashimportant15-max-hireflow-app-jhoc1s.streamlit.app",
-        note: "May show a wake-up screen on first load.",
       },
       {
         label: "Demo video",
@@ -92,10 +90,9 @@ export const showcaseProjects: ShowcaseProject[] = [
       {
         label: "Live demo",
         href: "https://covenant-ai-brand-guardian.streamlit.app/",
-        note: "May show a wake-up screen on first load.",
       },
     ],
-    screenshots: ["/images/projects/covenant-1.png"],
+    screenshots: ["/images/projects/covenant-1.webp"],
     device: "laptop",
   },
   {
@@ -113,10 +110,9 @@ export const showcaseProjects: ShowcaseProject[] = [
       {
         label: "Live demo",
         href: "https://docket-jw6s.onrender.com/gallery",
-        note: "May take up to a minute to wake up.",
       },
     ],
-    screenshots: ["/images/projects/docket-1.png"],
+    screenshots: ["/images/projects/docket-1.webp"],
     device: "laptop",
   },
 ];
@@ -128,6 +124,8 @@ export type DashboardProject = {
   chips: string[];
   tags: string[];
   github: string;
+  /** Optional preview screenshot shown on the card. */
+  screenshot?: string;
 };
 
 export const dashboardProjects: DashboardProject[] = [
@@ -138,6 +136,7 @@ export const dashboardProjects: DashboardProject[] = [
     chips: ["150,000 trips", "228 stations", "10 years of financials"],
     tags: ["Excel", "Pivot Tables", "Python", "Pandas"],
     github: "https://github.com/aakashimportant15-max/DMRC-Intelligence-Platform",
+    screenshot: "/images/projects/dmrc-1.png",
   },
   {
     id: "blinkit",
@@ -146,6 +145,7 @@ export const dashboardProjects: DashboardProject[] = [
     chips: ["8,523 records", "6 KPI cards", "5 cross-filtered visuals"],
     tags: ["Power BI", "Python", "Pandas"],
     github: "https://github.com/aakashimportant15-max/BlinkIT-Sales-Intelligence-Platform",
+    screenshot: "/images/projects/blinkit-1.png",
   },
 ];
 
@@ -156,6 +156,8 @@ export type SmallProject = {
   tags: string[];
   github: string;
   note?: string;
+  /** Optional preview screenshot shown on the card. */
+  screenshot?: string;
 };
 
 export const moreProjects: SmallProject[] = [
@@ -167,6 +169,7 @@ export const moreProjects: SmallProject[] = [
     tags: ["Python", "HMAC-SHA256", "pytest"],
     github: "https://github.com/aakashimportant15-max/StageProof",
     note: "Uses simulated data.",
+    screenshot: "/images/projects/stageproof-1.webp",
   },
   {
     id: "cropguard",
@@ -176,6 +179,7 @@ export const moreProjects: SmallProject[] = [
     tags: ["YOLOv8", "Flask", "Telegram bot"],
     github: "https://github.com/aakashimportant15-max/CropGuard",
     note: "Hardware integration in progress. Co-applicant on a design registration application for the solar-powered enclosure, accepted by VIPS-TC.",
+    screenshot: "/images/projects/cropguard-1.webp",
   },
   {
     id: "phishing",
@@ -194,6 +198,7 @@ export const moreProjects: SmallProject[] = [
     tags: ["Python", "TF-IDF", "Random Forest"],
     github: "https://github.com/aakashimportant15-max/AI-Fake-News-Detection",
     note: "Benchmark on a fixed split; see repository for limitations.",
+    screenshot: "/images/projects/fake-news-1.png",
   },
 ];
 

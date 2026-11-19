@@ -77,6 +77,19 @@ export default function Achievements({
                   <span className="font-medium text-ink">{c.name}</span> - {c.issuer} (
                   {c.year}
                   {c.inProgress ? ", in progress" : ""})
+                  {c.href && (
+                    <>
+                      {" "}
+                      <a
+                        href={c.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="whitespace-nowrap font-semibold text-teal underline-offset-4 hover:underline"
+                      >
+                        {c.hrefLabel ?? "View"}
+                      </a>
+                    </>
+                  )}
                 </span>
               </li>
             ))}
@@ -96,6 +109,17 @@ function AchievementCard({
     <div className="rounded-2xl border border-line bg-card p-5 shadow-[var(--shadow)]">
       <h3 className="font-display text-base font-bold text-ink">{a.title}</h3>
       <p className="mt-1.5 text-sm leading-relaxed text-ink-muted">{a.detail}</p>
+      {a.proof && (
+        <a
+          href={a.proof.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-3 inline-flex items-center gap-1.5 rounded-full border border-line px-3 py-1.5 text-xs font-semibold text-teal transition-colors hover:border-teal"
+        >
+          <ExternalLink size={13} aria-hidden />
+          {a.proof.label}
+        </a>
+      )}
     </div>
   );
 }

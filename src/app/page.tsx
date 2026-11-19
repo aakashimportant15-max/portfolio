@@ -13,7 +13,7 @@ import Footer from "@/components/Footer";
 import type { ResumeOptionState } from "@/components/ResumeDropdown";
 import { checkPublicFiles, publicFileExists } from "@/lib/files";
 import { resumes } from "@/data/resumes";
-import { showcaseProjects } from "@/data/projects";
+import { dashboardProjects, moreProjects, showcaseProjects } from "@/data/projects";
 import { profile } from "@/data/profile";
 
 export default function Home() {
@@ -24,7 +24,11 @@ export default function Home() {
     available: publicFileExists(`resumes/${r.file}`),
   }));
 
-  const screenshotPaths = showcaseProjects.flatMap((p) => p.screenshots);
+  const screenshotPaths = [
+    ...showcaseProjects.flatMap((p) => p.screenshots),
+    ...dashboardProjects.map((d) => d.screenshot),
+    ...moreProjects.map((m) => m.screenshot),
+  ].filter((p): p is string => Boolean(p));
   const imageMap = checkPublicFiles(screenshotPaths);
 
   const photoAvailable = publicFileExists(profile.photo.replace(/^\//, ""));

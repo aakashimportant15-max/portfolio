@@ -1,4 +1,5 @@
 import { ArrowUpRight, Github, ExternalLink } from "lucide-react";
+import Image from "next/image";
 import { dashboardProjects, moreProjects, showcaseProjects } from "@/data/projects";
 import DeviceMockup, { type MockupImage } from "./DeviceMockup";
 
@@ -94,11 +95,6 @@ export default function ProjectShowcase({
                       </a>
                     )}
                   </div>
-                  {p.links.some((l) => l.note) && (
-                    <p className="mt-2 text-xs text-ink-muted">
-                      {p.links.filter((l) => l.note).map((l) => l.note).join(" ")}
-                    </p>
-                  )}
                 </div>
 
                 <div className={textFirst ? "md:order-2" : "md:order-1"}>
@@ -108,6 +104,11 @@ export default function ProjectShowcase({
             );
           })}
         </div>
+
+        <p className="mt-6 text-xs text-ink-muted">
+          Render-hosted demos may take up to a minute to wake up; Streamlit demos may
+          show a wake-up screen on first load.
+        </p>
 
         {/* Dashboards (05) */}
         <div className="mt-20 md:mt-28">
@@ -124,8 +125,18 @@ export default function ProjectShowcase({
             {dashboardProjects.map((d) => (
               <article
                 key={d.id}
-                className="rounded-2xl border border-line bg-card p-6 shadow-[var(--shadow)]"
+                className="flex flex-col overflow-hidden rounded-2xl border border-line bg-card shadow-[var(--shadow)]"
               >
+                {d.screenshot && imageMap[d.screenshot] ? (
+                  <Image
+                    src={d.screenshot}
+                    alt={`${d.title} dashboard screenshot`}
+                    width={800}
+                    height={450}
+                    className="aspect-video w-full border-b border-line object-cover object-top"
+                  />
+                ) : null}
+                <div className="flex flex-1 flex-col p-6">
                 <h4 className="font-display text-lg font-bold text-ink">{d.title}</h4>
                 <p className="mt-1.5 text-sm text-ink-muted">{d.oneLiner}</p>
                 <ul className="mt-4 flex flex-wrap gap-2">
@@ -157,6 +168,7 @@ export default function ProjectShowcase({
                   <Github size={15} aria-hidden /> GitHub
                   <ArrowUpRight size={13} className="text-ink-muted" aria-hidden />
                 </a>
+                </div>
               </article>
             ))}
           </div>
@@ -169,8 +181,18 @@ export default function ProjectShowcase({
             {moreProjects.map((m) => (
               <article
                 key={m.id}
-                className="flex flex-col rounded-2xl border border-line bg-card p-5 shadow-[var(--shadow)]"
+                className="flex flex-col overflow-hidden rounded-2xl border border-line bg-card shadow-[var(--shadow)]"
               >
+                {m.screenshot && imageMap[m.screenshot] ? (
+                  <Image
+                    src={m.screenshot}
+                    alt={`${m.title} screenshot`}
+                    width={800}
+                    height={450}
+                    className="aspect-video w-full border-b border-line object-cover object-top"
+                  />
+                ) : null}
+                <div className="flex flex-1 flex-col p-5">
                 <h4 className="font-display text-base font-bold text-ink">{m.title}</h4>
                 <p className="mt-1.5 flex-1 text-sm leading-relaxed text-ink-muted">
                   {m.oneLiner}
@@ -197,6 +219,7 @@ export default function ProjectShowcase({
                   <Github size={14} aria-hidden /> GitHub
                   <ArrowUpRight size={12} className="text-ink-muted" aria-hidden />
                 </a>
+                </div>
               </article>
             ))}
           </div>

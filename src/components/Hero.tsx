@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ArrowDown, Mail, MapPin } from "lucide-react";
+import { ArrowDown, Github, Linkedin, Mail, MapPin } from "lucide-react";
 import { profile } from "@/data/profile";
 
 export default function Hero({ photoAvailable }: { photoAvailable: boolean }) {
@@ -22,6 +22,10 @@ export default function Hero({ photoAvailable }: { photoAvailable: boolean }) {
           <p className="mt-4 max-w-xl text-lg leading-relaxed text-ink-muted">
             {profile.tagline}
           </p>
+          <p className="mt-3 inline-flex items-center gap-2 rounded-full border border-teal/30 bg-teal/10 px-3 py-1 text-sm font-medium text-teal">
+            <span className="h-1.5 w-1.5 rounded-full bg-teal" aria-hidden />
+            Open to internships in backend, GenAI, ML/NLP and data analytics
+          </p>
 
           <div className="mt-7 flex flex-wrap items-center gap-3">
             <a
@@ -40,9 +44,29 @@ export default function Hero({ photoAvailable }: { photoAvailable: boolean }) {
             </a>
           </div>
 
-          <p className="mt-6 inline-flex items-center gap-1.5 text-sm text-ink-muted">
-            <MapPin size={14} aria-hidden />
-            {profile.location}
+          <p className="mt-6 flex items-center gap-3 text-sm text-ink-muted">
+            <span className="inline-flex items-center gap-1.5">
+              <MapPin size={14} aria-hidden />
+              {profile.location}
+            </span>
+            <a
+              href={profile.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub profile"
+              className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-line bg-card text-ink-muted transition-colors hover:text-accent"
+            >
+              <Github size={14} aria-hidden />
+            </a>
+            <a
+              href={profile.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn profile"
+              className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-line bg-card text-ink-muted transition-colors hover:text-accent"
+            >
+              <Linkedin size={14} aria-hidden />
+            </a>
           </p>
         </div>
 

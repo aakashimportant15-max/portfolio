@@ -13,7 +13,9 @@ export default function About() {
       <div className="grid gap-10 md:grid-cols-[1.5fr_1fr]">
         <div>
           <p className="font-mono text-xs uppercase tracking-widest text-teal">About me</p>
-          <h2 className="mt-2 font-display text-3xl font-bold text-ink">Hi there</h2>
+          <h2 className="mt-2 font-display text-3xl font-bold text-ink">
+            I build working products
+          </h2>
           <div className="mt-5 space-y-4 text-base leading-relaxed text-ink-muted">
             <p>
               B.Tech Computer Science student (2023-2027, CGPA 8.48/10) at VIPS-TC, GGSIPU,

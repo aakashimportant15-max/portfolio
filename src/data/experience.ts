@@ -1,5 +1,6 @@
 // ---------------------------------------------------------------
 // Experience timeline (max 2 short bullets each).
+// proof = optional document under /public (certificate / letter).
 // ---------------------------------------------------------------
 
 export type ExperienceItem = {
@@ -8,6 +9,7 @@ export type ExperienceItem = {
   period: string;
   bullets: string[];
   recognition?: string;
+  proof?: { label: string; href: string };
 };
 
 export const experience: ExperienceItem[] = [
@@ -21,6 +23,10 @@ export const experience: ExperienceItem[] = [
     ],
     recognition:
       "Certificate of Achievement for outstanding performance in data analysis (Aug 2026).",
+    proof: {
+      label: "View certificate",
+      href: "/experience/studifysuccess-internship-certificate-2026.pdf",
+    },
   },
   {
     role: "AI Data Analytics Intern",
@@ -29,6 +35,23 @@ export const experience: ExperienceItem[] = [
     bullets: [
       "Researched AI and data-analytics adoption across 10+ Indian NGOs; compiled findings into reports and recommendations.",
     ],
+    proof: {
+      label: "View certificate",
+      href: "/experience/inamigos-internship-certificate-2026.pdf",
+    },
+  },
+  {
+    role: "AI/ML Summer Intern",
+    org: "IICT (Indian Institute of Computing and Technology)",
+    period: "Jun 2026 - Jul 2026",
+    bullets: [
+      "Completed a 45-day summer internship in Artificial Intelligence and Machine Learning (15 Jun - 30 Jul 2026).",
+      "Built two projects during the program: AI-Powered Fake News Detection and AI-Driven Phishing Email Detection.",
+    ],
+    proof: {
+      label: "View certificate",
+      href: "/certificates/iict-summer-internship-2026.pdf",
+    },
   },
   {
     role: "Campus Ambassador",
@@ -45,5 +68,9 @@ export const experience: ExperienceItem[] = [
     bullets: [
       "Represented eDC IIT Delhi for BECon 2026, driving student registrations and event promotion; recognized as a Top Campus Ambassador.",
     ],
+    proof: {
+      label: "View certificate",
+      href: "/experience/edc-campus-ambassador-certificate-2026.pdf",
+    },
   },
 ];

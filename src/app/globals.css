@@ -101,7 +101,8 @@ div[id="top"] {
   -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 0%, black 30%, transparent 75%);
 }
 
-/* Count-up numbers: tabular so widths don't jump */
+/* Count-up numbers: tabular, lining figures so widths don't jump */
 .tabular {
-  font-variant-numeric: tabular-nums;
+  font-variant-numeric: tabular-nums lining-nums;
+  font-feature-settings: "tnum" 1, "lnum" 1;
 }
