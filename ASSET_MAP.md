@@ -33,6 +33,7 @@ Names were verified by opening each file (text extraction + page render), not by
 | StageProof replay dashboard (dark) | Project screenshot | More-projects card StageProof | `public/images/projects/stageproof-1.webp` |
 | CropGuard solar enclosure diagram | Project diagram | More-projects card CropGuard | `public/images/projects/cropguard-1.webp` |
 | AI-Powered Fake News Detection README | Project screenshot | More-projects card Fake News Detection | `public/images/projects/fake-news-1.png` |
+| AI-Driven Phishing Email Detection README (added in follow-up) | Project screenshot | More-projects card Phishing Detection | `public/images/projects/phishing-1.png` |
 | Agentic AI Hackathon '26 participation cert (product space, 21 Sep 2026) | Certificate image | Certifications (participation) | `public/certificates/agentic-ai-hackathon-2026.jpg` |
 | HACKDAY 1.0 participation cert | Certificate image (duplicate of 3.pdf page 1) | Certifications (participation) — PDF is linked, image unused | — (PDF used) |
 | IILM Best Paper Presentation Award | Achievement certificate image | Achievements #2 ("View certificate") | `public/certificates/iilm-best-paper-2026.webp` |

@@ -73,6 +73,5 @@ Continuation of the existing portfolio (Next.js static export). Design language 
    the original verified facts. I added it to the certifications list; remove it if you
    prefer it kept off the public site.
 3. **Missing resume PDFs** — Business Analyst and SAP ABAP (dropdown entries disabled).
-4. **No screenshot** — AI-Driven Phishing Email Detection has no image (its "More
-   projects" card is text-only); send one and it will slot in automatically.
+4. ~~No screenshot~~ RESOLVED: Phishing Detection screenshot received and wired in (follow-up commit).
 5. **OG image** — no Open Graph preview image exists yet; I can generate one if you want.

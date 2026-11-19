@@ -189,6 +189,7 @@ export const moreProjects: SmallProject[] = [
     tags: ["Python", "TF-IDF", "Random Forest"],
     github: "https://github.com/aakashimportant15-max/AI-Phishing-Email-Detection",
     note: "Benchmark on a fixed split; see repository for limitations.",
+    screenshot: "/images/projects/phishing-1.png",
   },
   {
     id: "fakenews",
